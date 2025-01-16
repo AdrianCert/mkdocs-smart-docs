@@ -3,6 +3,12 @@ ignorePaths: []
 dictionaryDefinitions: []
 dictionaries: []
 words:
+  - fastapi
   - mkdocs
+  - msgspec
+  - popleft
+  - sents
+  - starlette
+  - uvicorn
 ignoreWords: []
 import: []

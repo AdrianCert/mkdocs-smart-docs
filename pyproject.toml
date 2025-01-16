@@ -1,0 +1,46 @@
+[project]
+name = "mkdocs-smart-docs"
+version = "0.1.0"
+description = "Brings AI-powered interactivity to your documentation"
+authors = [
+    { name = "Panaintescu Adrian Valentin", email = "adrian.cert@gmail.com" },
+]
+dependencies = [
+    "mkdocs",
+    "sentencepiece>=0.2.0",
+    "spacy>=3.8.1",
+    "torch>=2.5.1",
+    "transformers>=4.5.0",
+    # other dependencies here
+    "setuptools>=75.8.0",
+    "transformers",
+]
+readme = "readme.md"
+license = "Apache-2.0"
+requires-python = ">= 3.8"
+
+[project.optional-dependencies]
+server = [
+    "fastapi",
+    "uvicorn",
+    "msgspec",
+    "starlette",
+    # other dependencies here
+]
+
+[project.entry-points."mkdocs.plugins"]
+smart-docs = "mkdocs_smart_docs.plugin:SmartDocsPlugin"
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mkdocs_smart_docs"]
+
+[tool.ruff.lint]
+extend-select = ["C", "N", "SIM", "PTH", "I", "PL", "FURB"]
